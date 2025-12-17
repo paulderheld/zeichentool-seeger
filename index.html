@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeichentool</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body style="margin:0;padding:0;height:100vh;overflow:hidden;">
+    <h1 style="position:absolute;top:1rem;left:50%;transform:translateX(-50%);margin:0;z-index:10;" id="title-header">male was!</h1>
+
+    <div class="grid-container" id="grid-container" aria-label="10 by 10 color grid"></div>
+
+    <div class="controls-fixed">
+      <div style="display:flex;gap:1rem;justify-content:center;align-items:center;width:100%;">
+        <label for="radiusSlider">Abrunden: <span id="radiusValue">6</span>px</label>
+        <label for="gapSlider">Abstand: <span id="gapValue">6</span>px</label>
+      </div>
+      <div style="width:100%;">
+        <input id="radiusSlider" type="range" min="0" max="40" value="6" />
+      </div>
+      <div style="width:100%;margin-top:0.5rem;">
+        <input id="gapSlider" type="range" min="0" max="5" value="1" />
+      </div>
+    </div>
+    <div id="colorButton" style="position:absolute;top:1rem;right:1rem;z-index:10;background:#eee;padding:0.5rem;border-radius:0.5rem;">Farbe ändern</div>
+    
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
