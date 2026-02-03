@@ -1,0 +1,131 @@
+:root {
+  --grid-count: 10;
+  --bg: #eeeeee;
+  --text: rgb(88, 67, 67);
+  --control-bg: rgba(252, 251, 250, 0.95);
+  --square-bg: #eee;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: 'monospace', sans-serif;
+  color: var(--text);
+  overflow: hidden;
+}
+
+h1 {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+h1:hover {
+  animation: hoveranimation 3s ease-in-out infinite alternate;
+}
+
+@keyframes hoveranimation {
+  from {
+    color: red;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    color: blue;
+    transform: translateX(-50%) rotate(365deg);
+  }
+ 
+}
+
+#grid{
+  display: grid;
+  grid-template-columns: repeat(50, 2vw);
+  grid-auto-rows:1vw;
+  width: calc(100 * 1vw)+9*1px;
+
+}
+
+.cell{
+  display:grid;
+  grid-template-rows: repeat(50, 2vw);
+  width: 2vw;
+  /* width: calc(var(--grid-count) * 2vw); */
+  height: 2vw;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(50,1fr);
+  grid-template-rows: repeat(50, 1fr);
+  gap: var(--grid-gap, 6px);
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.grid-square {
+  width: 100%;
+  height: 100%;
+  background: var(--square-bg);
+  border: 0px solid var(--square-border);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background 0.2s, border-radius 0.2s;
+  border-radius: var(--cell-radius, 6px);
+}
+
+.grid-square:hover {
+  filter: brightness(0.9);
+  
+}
+.controls-fixed {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--control-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 2;
+  text-align: center;
+  width: 25vw;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(171, 169, 169, 0.2);
+}
+
+.controls-fixed input[type="range"] {
+  width: 100%;
+  max-width: 420px;
+}
+
+
+
+.grid-square.active {
+  background:#eee;
+}
+input[type="color"] {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+#gapSlider{
+  border: #eee;
+  width: 20vw;
+}
+#radiusSlider{
+  border: #eee;
+  width: 20vw;
+}
+
+
